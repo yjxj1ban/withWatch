@@ -10,5 +10,6 @@
 #import <Foundation/Foundation.h>
 
 @interface InterfaceController : WKInterfaceController
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *toIphone;
 
 @end

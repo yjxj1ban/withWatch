@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+@import WatchConnectivity;
 
-@interface ViewController ()
+@interface ViewController ()<WCSessionDelegate>
 
 @end
 
@@ -17,6 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)toWatchAction:(id)sender {
+    
+    if ([WCSession isSupported]) {
+        WCSession* sessionToWatch = [WCSession defaultSession];
+        sessionToWatch.delegate = self;
+        [sessionToWatch activateSession];
+        NSDictionary *receiveData = [sessionToWatch receivedApplicationContext];
+        NSLog(@"%@",receiveData);
+        
+        if([[receiveData objectForKey:@"yang"]  isEqual: @"1"]){
+            
+            [self.toWatch setHidden:YES];
+            [receiveData setValue:@"0" forKey:@"yang"];
+            [sessionToWatch updateApplicationContext:receiveData error:nil];
+//            NSLog(@"%@",receiveData);
+        }
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

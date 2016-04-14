@@ -7,9 +7,9 @@
 //
 
 #import "InterfaceController.h"
+@import WatchConnectivity;
 
-
-@interface InterfaceController()
+@interface InterfaceController()<WCSessionDelegate>
 
 @end
 
@@ -25,6 +25,29 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+}
+- (IBAction)toIphoneAction {
+    
+     NSDictionary *dict = @{@"yang":@"1"};
+    
+    if ([WCSession isSupported]) {
+        
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        [session updateApplicationContext:dict error:nil];
+        
+        dict = [session receivedApplicationContext];
+        
+        if ([[dict valueForKey:@"yang"] isEqual:@"0"]){
+            [self.toIphone setHidden:NO];
+        }
+        else{
+           [self.toIphone setHidden:YES];
+        }
+    }
+    
+    
 }
 
 - (void)didDeactivate {
