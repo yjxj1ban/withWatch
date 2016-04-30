@@ -22,6 +22,8 @@
 		E0451B4A1CBFC98200555999 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B491CBFC98200555999 /* ExtensionDelegate.m */; };
 		E0451B4D1CBFC98200555999 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B4C1CBFC98200555999 /* NotificationController.m */; };
 		E0451B4F1CBFC98200555999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0451B4E1CBFC98200555999 /* Assets.xcassets */; };
+		E057AA2C1CCBC31400A8A92D /* oInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = E057AA2B1CCBC31400A8A92D /* oInterfaceController.m */; };
+		E0D3A14B1CC2991600DFE52A /* tmp.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D3A14A1CC2991600DFE52A /* tmp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,9 @@
 		E0451B4C1CBFC98200555999 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		E0451B4E1CBFC98200555999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0451B501CBFC98200555999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E057AA2A1CCBC31400A8A92D /* oInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oInterfaceController.h; sourceTree = "<group>"; };
+		E057AA2B1CCBC31400A8A92D /* oInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oInterfaceController.m; sourceTree = "<group>"; };
+		E0D3A14A1CC2991600DFE52A /* tmp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +201,7 @@
 		E0451B421CBFC98200555999 /* withWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E0D3A14A1CC2991600DFE52A /* tmp.png */,
 				E0451B451CBFC98200555999 /* InterfaceController.h */,
 				E0451B461CBFC98200555999 /* InterfaceController.m */,
 				E0451B481CBFC98200555999 /* ExtensionDelegate.h */,
@@ -205,6 +211,8 @@
 				E0451B4E1CBFC98200555999 /* Assets.xcassets */,
 				E0451B501CBFC98200555999 /* Info.plist */,
 				E0451B431CBFC98200555999 /* Supporting Files */,
+				E057AA2A1CCBC31400A8A92D /* oInterfaceController.h */,
+				E057AA2B1CCBC31400A8A92D /* oInterfaceController.m */,
 			);
 			path = "withWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0451B4F1CBFC98200555999 /* Assets.xcassets in Resources */,
+				E0D3A14B1CC2991600DFE52A /* tmp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0451B4A1CBFC98200555999 /* ExtensionDelegate.m in Sources */,
+				E057AA2C1CCBC31400A8A92D /* oInterfaceController.m in Sources */,
 				E0451B471CBFC98200555999 /* InterfaceController.m in Sources */,
 				E0451B4D1CBFC98200555999 /* NotificationController.m in Sources */,
 			);
@@ -606,6 +616,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = withWatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mengcheng.withWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,6 +631,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = withWatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mengcheng.withWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -670,6 +682,7 @@
 				E0451B551CBFC98200555999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0451B571CBFC98200555999 /* Build configuration list for PBXNativeTarget "withWatch WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +691,7 @@
 				E0451B591CBFC98200555999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0451B5B1CBFC98200555999 /* Build configuration list for PBXNativeTarget "withWatch" */ = {
 			isa = XCConfigurationList;
@@ -686,6 +700,7 @@
 				E0451B5D1CBFC98200555999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0451B5E1CBFC98200555999 /* Build configuration list for PBXNativeTarget "withWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +709,7 @@
 				E0451B601CBFC98200555999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

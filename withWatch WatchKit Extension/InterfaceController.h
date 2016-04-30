@@ -12,4 +12,5 @@
 @interface InterfaceController : WKInterfaceController
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *toIphone;
 //@property (strong) NSDictionary *dict;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *transFile;
 @end

@@ -13,6 +13,8 @@
 @interface ViewController ()<WCSessionDelegate>
 @property (strong) NSString *test;
 @property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *userInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageShow;
 
 @end
 
@@ -84,12 +86,31 @@
     NSLog(@"%@",result);
 
 }
+//使用transferUserInfo的时候，获得transfer的内容。
+-(void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo{
+    NSString *dictForUserInfo = [userInfo objectForKey:@"yang"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.userInfo setText:dictForUserInfo];
+    });
+    
+}
 
+-(void)session:(WCSession *)session didReceiveFile:(WCSessionFile *)file{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:file.fileURL];
+        //data和image之间如何转换
+        self.imageShow.image = [[UIImage alloc]initWithData:imageData];
+    });
+}
 
 - (IBAction)toWatchAction:(id)sender {
     [self.labelOne setText:@"clear"];
+    
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -78,9 +78,16 @@
 -(void)sendthings:(NSString *)strings{
     NSDictionary *dict = @{@"yang":strings};
     [self.session updateApplicationContext:dict error:nil];
-    
-    
+    [self.session transferUserInfo:dict];
 }
+
+- (IBAction)actionTransFile {
+//    [self.session transferUserInfo:useDict];
+    NSURL *filePath = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tmp" ofType:@"png"]];
+    NSLog(@"%@",filePath);
+    [self.session transferFile:filePath metadata:nil];
+}
+
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
