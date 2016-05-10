@@ -7,7 +7,7 @@
 //
 
 #import <WatchKit/WatchKit.h>
-
-@interface ExtensionDelegate : NSObject <WKExtensionDelegate>
+@import WatchConnectivity;
+@interface ExtensionDelegate : NSObject <WKExtensionDelegate,WCSessionDelegate>
 
 @end

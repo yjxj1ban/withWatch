@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01D14891CD5C7DA00B581BC /* sigleTry.m in Sources */ = {isa = PBXBuildFile; fileRef = E01D14881CD5C7DA00B581BC /* sigleTry.m */; };
 		E0451B121CBFC98200555999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B111CBFC98200555999 /* main.m */; };
 		E0451B151CBFC98200555999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B141CBFC98200555999 /* AppDelegate.m */; };
 		E0451B181CBFC98200555999 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B171CBFC98200555999 /* ViewController.m */; };
@@ -23,6 +24,7 @@
 		E0451B4D1CBFC98200555999 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0451B4C1CBFC98200555999 /* NotificationController.m */; };
 		E0451B4F1CBFC98200555999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0451B4E1CBFC98200555999 /* Assets.xcassets */; };
 		E057AA2C1CCBC31400A8A92D /* oInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = E057AA2B1CCBC31400A8A92D /* oInterfaceController.m */; };
+		E0AA8A351CE201B000F55709 /* sendContentToWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AA8A341CE201B000F55709 /* sendContentToWatch.m */; };
 		E0D3A14B1CC2991600DFE52A /* tmp.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D3A14A1CC2991600DFE52A /* tmp.png */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E01D14871CD5C7DA00B581BC /* sigleTry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sigleTry.h; sourceTree = "<group>"; };
+		E01D14881CD5C7DA00B581BC /* sigleTry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sigleTry.m; sourceTree = "<group>"; };
 		E0451B0D1CBFC98200555999 /* withWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = withWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0451B111CBFC98200555999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0451B131CBFC98200555999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		E0451B501CBFC98200555999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E057AA2A1CCBC31400A8A92D /* oInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oInterfaceController.h; sourceTree = "<group>"; };
 		E057AA2B1CCBC31400A8A92D /* oInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oInterfaceController.m; sourceTree = "<group>"; };
+		E0AA8A331CE201B000F55709 /* sendContentToWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendContentToWatch.h; sourceTree = "<group>"; };
+		E0AA8A341CE201B000F55709 /* sendContentToWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendContentToWatch.m; sourceTree = "<group>"; };
 		E0D3A14A1CC2991600DFE52A /* tmp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,10 +164,13 @@
 		E0451B0F1CBFC98200555999 /* withWatch */ = {
 			isa = PBXGroup;
 			children = (
+				E0AA8A361CE201CB00F55709 /* try */,
 				E0451B131CBFC98200555999 /* AppDelegate.h */,
 				E0451B141CBFC98200555999 /* AppDelegate.m */,
 				E0451B161CBFC98200555999 /* ViewController.h */,
 				E0451B171CBFC98200555999 /* ViewController.m */,
+				E0AA8A331CE201B000F55709 /* sendContentToWatch.h */,
+				E0AA8A341CE201B000F55709 /* sendContentToWatch.m */,
 				E0451B191CBFC98200555999 /* Main.storyboard */,
 				E0451B1C1CBFC98200555999 /* Assets.xcassets */,
 				E0451B1E1CBFC98200555999 /* LaunchScreen.storyboard */,
@@ -223,6 +232,15 @@
 				E0451B441CBFC98200555999 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0AA8A361CE201CB00F55709 /* try */ = {
+			isa = PBXGroup;
+			children = (
+				E01D14871CD5C7DA00B581BC /* sigleTry.h */,
+				E01D14881CD5C7DA00B581BC /* sigleTry.m */,
+			);
+			name = try;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01D14891CD5C7DA00B581BC /* sigleTry.m in Sources */,
+				E0AA8A351CE201B000F55709 /* sendContentToWatch.m in Sources */,
 				E0451B181CBFC98200555999 /* ViewController.m in Sources */,
 				E0451B151CBFC98200555999 /* AppDelegate.m in Sources */,
 				E0451B121CBFC98200555999 /* main.m in Sources */,

@@ -11,6 +11,7 @@
 
 @interface InterfaceController()<WCSessionDelegate>
 @property (strong, nonatomic) WCSession *session;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *LabelShow;
 @end
 
 
@@ -39,60 +40,72 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
-- (IBAction)toIphoneAction {
-
-//    if ([WCSession isSupported]) {
-    
-//        WCSession* session = [WCSession defaultSession];
-//        session.delegate = self;
-//        [session activateSession];
-        
-//        NSDictionary *receiveFromIphone = [session receivedApplicationContext];
-        
-        //如果yang=0 就是watch显示出来。yang=1，就是watch不显示出来
+//- (IBAction)toIphoneAction {
+//
+////    if ([WCSession isSupported]) {
+//    
+////        WCSession* session = [WCSession defaultSession];
+////        session.delegate = self;
+////        [session activateSession];
 //        
-//        if ([[self.dict valueForKey:@"yang"] isEqualToString:@"0"]){
-//            
-//            [self.toIphone setHidden:YES];
-//            NSMutableDictionary *changeToMutable = [NSMutableDictionary dictionaryWithDictionary:self.dict];
-//            [changeToMutable setObject:@"1" forKey:@"yang"];
-//            
-//            NSLog(@"%@",changeToMutable);
-//            
-//            NSDictionary *backToDiction = (NSDictionary *)changeToMutable;
-//            [session updateApplicationContext:backToDiction error:nil];
-//            
-//        }else{
-////            [self.toIphone setHidden:NO];
-//        }
-        
+////        NSDictionary *receiveFromIphone = [session receivedApplicationContext];
+//        
+//        //如果yang=0 就是watch显示出来。yang=1，就是watch不显示出来
+////        
+////        if ([[self.dict valueForKey:@"yang"] isEqualToString:@"0"]){
+////            
+////            [self.toIphone setHidden:YES];
+////            NSMutableDictionary *changeToMutable = [NSMutableDictionary dictionaryWithDictionary:self.dict];
+////            [changeToMutable setObject:@"1" forKey:@"yang"];
+////            
+////            NSLog(@"%@",changeToMutable);
+////            
+////            NSDictionary *backToDiction = (NSDictionary *)changeToMutable;
+////            [session updateApplicationContext:backToDiction error:nil];
+////            
+////        }else{
+//////            [self.toIphone setHidden:NO];
+////        }
+//        
+////    }
+//    for (int i = 0;i<5;++i){
+//        NSString *string = [NSString stringWithFormat:@"yang,%d",i];
+//
+//    [self sendthings:string];
+//    NSLog(@"click button");
 //    }
-    for (int i = 0;i<5;++i){
-        NSString *string = [NSString stringWithFormat:@"yang,%d",i];
+//    
+//}
+//-(void)sendthings:(NSString *)strings{
+//    NSDictionary *dict = @{@"yang":strings};
+////    [self.session updateApplicationContext:dict error:nil];
+//    [self.session transferUserInfo:dict];
+//}
+//
+//- (IBAction)actionTransFile {
+////    [self.session transferUserInfo:useDict];
+//    NSURL *filePath = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tmp" ofType:@"png"]];
+//    NSLog(@"%@",filePath);
+//    [self.session transferFile:filePath metadata:nil];
+//}
+//
+//
+//- (void)didDeactivate {
+//    // This method is called when watch view controller is no longer visible
+//    [super didDeactivate];
+//}
 
-    [self sendthings:string];
-    NSLog(@"click button");
-    }
+//收到iphone发送来的消息，然后将这个label变成接收到的消息。
+-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
+    NSString *gotFromIphone = [applicationContext objectForKey:@"logStatus"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+          [self.LabelShow setText:gotFromIphone];
+    });
+ 
+    NSLog(@"things from iphone%@", gotFromIphone);
     
 }
--(void)sendthings:(NSString *)strings{
-    NSDictionary *dict = @{@"yang":strings};
-    [self.session updateApplicationContext:dict error:nil];
-    [self.session transferUserInfo:dict];
-}
 
-- (IBAction)actionTransFile {
-//    [self.session transferUserInfo:useDict];
-    NSURL *filePath = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tmp" ofType:@"png"]];
-    NSLog(@"%@",filePath);
-    [self.session transferFile:filePath metadata:nil];
-}
-
-
-- (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
-    [super didDeactivate];
-}
 
 @end
 

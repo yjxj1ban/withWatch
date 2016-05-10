@@ -57,6 +57,7 @@
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];
+
     }
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -86,6 +87,7 @@
     NSLog(@"%@",result);
 
 }
+
 //使用transferUserInfo的时候，获得transfer的内容。
 -(void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo{
     NSString *dictForUserInfo = [userInfo objectForKey:@"yang"];

@@ -28,14 +28,16 @@
                                 <segue destination="6D1-C1-hu6" kind="modal" identifier="pageBase" id="kNL-vd-ToO"/>
                             </connections>
                         </button>
+                        <label width="136" alignment="left" text="showFromIphone" id="2Sm-kl-4Cl"/>
                     </items>
                     <connections>
+                        <outlet property="LabelShow" destination="2Sm-kl-4Cl" id="sVb-xW-4ea"/>
                         <outlet property="toIphone" destination="uMU-PE-rhJ" id="4S0-z3-FtG"/>
                         <outlet property="transFile" destination="0Y0-j1-AIb" id="COv-MN-AHu"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="344.5"/>
         </scene>
         <!--back-->
         <scene sceneID="ZkT-OS-nJ1">
